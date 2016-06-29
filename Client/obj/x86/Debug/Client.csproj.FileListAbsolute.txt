@@ -1,0 +1,10 @@
+C:\Users\CXO\Desktop\Client\Client\bin\Debug\Client.exe.config
+C:\Users\CXO\Desktop\Client\Client\bin\Debug\Client.exe
+C:\Users\CXO\Desktop\Client\Client\bin\Debug\Client.pdb
+C:\Users\CXO\Desktop\Client\Client\bin\Debug\NetComm.dll
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.MainDisplay.resources
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.exe
+C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.pdb

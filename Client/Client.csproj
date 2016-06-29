@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9845CAD-32AF-4E12-9F8E-7A8A096CEE41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Berenjena_copy.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NetComm">
+      <HintPath>..\NetComm.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDisplay.Designer.cs">
+      <DependentUpon>MainDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainDisplay.resx">
+      <DependentUpon>MainDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\culosucio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basto9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copa6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copa10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copa11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oro4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basto12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copa5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\dormischu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Berenjena_copy.ico" />
+    <None Include="Resources\back.png" />
+    <None Include="Properties\Resources\wpwAPm.gif" />
+    <None Include="Resources\gimnasia.wav" />
+    <None Include="Resources\gimnasia.bmp" />
+    <None Include="Properties\Resources\dormischu1.wav" />
+    <None Include="Properties\Resources\queloro.wav" />
+    <None Include="Properties\Resources\vuelauna.wav" />
+    <None Include="Properties\Resources\dormischu.wav" />
+    <None Include="Properties\Resources\zumbido.wav" />
+    <None Include="Resources\table.png" />
+    <None Include="Resources\pool-table-felt-vivid-pot-leaf-billiard-cloth-9.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

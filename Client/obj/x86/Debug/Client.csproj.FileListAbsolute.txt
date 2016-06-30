@@ -8,3 +8,6 @@ C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.Properties.Resources.res
 C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.csproj.GenerateResource.Cache
 C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.exe
 C:\Users\CXO\Desktop\Client\Client\obj\x86\Debug\Client.pdb
+C:\Users\CXO\Documents\GitHub\CardGame\Client\bin\Debug\Client.exe.config
+C:\Users\CXO\Documents\GitHub\CardGame\Client\obj\x86\Debug\Client.exe
+C:\Users\CXO\Documents\GitHub\CardGame\Client\obj\x86\Debug\Client.pdb

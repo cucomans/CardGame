@@ -8,3 +8,6 @@ C:\Users\CXO\Desktop\Host\Host\obj\x86\Debug\Host.exe
 C:\Users\CXO\Desktop\Host\Host\obj\x86\Debug\Host.pdb
 C:\Users\CXO\Desktop\Host\Host\obj\x86\Debug\Host.csprojResolveAssemblyReference.cache
 C:\Users\CXO\Desktop\Host\Host\obj\x86\Debug\Host.Persona.resources
+C:\Users\CXO\Documents\GitHub\CardGame\Host\Host\bin\Debug\Host.exe.config
+C:\Users\CXO\Documents\GitHub\CardGame\Host\Host\obj\x86\Debug\Host.exe
+C:\Users\CXO\Documents\GitHub\CardGame\Host\Host\obj\x86\Debug\Host.pdb

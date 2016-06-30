@@ -3002,7 +3002,7 @@ namespace Client
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                //aqui codigo
+                
                 client.SendData(ConvertStringToBytes(ChatMessage.Text)); //Sends the message to the host
                 ChatMessage.Clear(); //Clears the chatmessage textbox text
 
@@ -3202,7 +3202,7 @@ namespace Client
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                //aqui codigo
+                
                 client.SendData(ConvertStringToBytes("#2" + gpp2.Text));
             }
         }
@@ -3210,7 +3210,6 @@ namespace Client
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                //aqui codigo
                 client.SendData(ConvertStringToBytes("#1" + gpp1.Text));
             }
         }

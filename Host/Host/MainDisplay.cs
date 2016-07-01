@@ -628,14 +628,15 @@ namespace Host
                 }
            }
         }
-        void Server_DataReceived(string ID, byte[] Data)
+
+        void repartir(string ID, byte[] Data)
         {
             string aux = ConvertBytesToString(Data);
-
             if (ConvertBytesToString(Data) == "/roll1") //ronda 1
             {
                 foreach (string clientID in Server.Users)
-                { Server.SendData(clientID, ConvertStringToBytes("/1"));
+                {
+                    Server.SendData(clientID, ConvertStringToBytes("/1"));
                     switch (ID)
                     {
                         case "Rombo":
@@ -663,11 +664,11 @@ namespace Host
                 foreach (string clientID in Server.Users) //manda a cada usuario una carta random
                 {
                     int cxo = r.Next(1, 12);
-                    GuardarClienteNum(clientID, cxo,"1", lista);
+                    GuardarClienteNum(clientID, cxo, "1", lista);
                     Server.SendData(clientID, ConvertStringToBytes("Sale nueva Ronda ")); //Sends the message to the clients
                     if (clientID == "elYarol")
                     {
-                        Server.SendData("elYarol", ConvertStringToBytes("*player1" + cxo.ToString()+"1"));
+                        Server.SendData("elYarol", ConvertStringToBytes("*player1" + cxo.ToString() + "1"));
                         //Mandarcartaronda1(clientID, cxo, "c1p1");
 
                     }
@@ -696,13 +697,13 @@ namespace Host
                         //Mandarcartaronda1(clientID, cxo, "c1p3");
                     }
                 }
-                
+
             }
             if (ConvertBytesToString(Data) == "/roll3") //ronda 3
             {
                 foreach (string clientID in Server.Users)
                 {
-                  switch (ID )
+                    switch (ID)
                     {
                         case "Rombo":
                             Server.SendData(clientID, ConvertStringToBytes("Reparte Rombo"));
@@ -721,9 +722,9 @@ namespace Host
                             break;
 
                     }
-                          
-                  Server.SendData(clientID, ConvertStringToBytes("/3"));
-                  
+
+                    Server.SendData(clientID, ConvertStringToBytes("/3"));
+
                     switch (ID)
                     {
                         case "Rombo":
@@ -745,7 +746,7 @@ namespace Host
                     }
                 }
 
-              
+
 
                 // MAZO PELUDO 90 cartas|| 8 onces, 7 sietes, 8 dos, 8 unos, 6 nueves, 6 ochos, 8 diez, 8 doces, 8 cuatros,  8 cincos, 7 tres, ocho seis||
 
@@ -764,22 +765,22 @@ namespace Host
 
 
                 RandomearMazo(ref mazo);
-                                               
+
                 List<Persona> parts = new List<Persona>(); //crea la lista para la ronda 1 con la carta de cada usuario
                 Log.AppendText("Sale nueva Ronda de 3" + Environment.NewLine);
                 int j = 0;
-                           
+
                 for (int i = 1; i < 4; i++) //repite dar la mano
                 {
-                    
+
                     foreach (string clientID in Server.Users) //manda a cada usuario una carta random
                     {
-                        
+
                         GuardarClienteNum(clientID, int.Parse(mazo[j]), i.ToString(), lista);
                         if (clientID == "elYarol")
                         {
                             Server.SendData("elYarol", ConvertStringToBytes("*player1" + mazo[j].ToString() + i.ToString()));
-                            Log.AppendText("*player1" + mazo[j].ToString() + i.ToString() +Environment.NewLine);                      
+                            Log.AppendText("*player1" + mazo[j].ToString() + i.ToString() + Environment.NewLine);
                         }
                         if (clientID == "Baco")
                         {
@@ -830,7 +831,7 @@ namespace Host
                     }
 
                     Server.SendData(clientID, ConvertStringToBytes("/5"));
-                   
+
                 }
 
                 string[] mazo = { "1", "1", "1", "1",
@@ -866,7 +867,7 @@ namespace Host
 
                     foreach (string clientID in Server.Users) //manda a cada usuario una carta random
                     {
-                        
+
                         GuardarClienteNum(clientID, int.Parse(mazo[j]), i.ToString(), lista);
                         if (clientID == "elYarol")
                         {
@@ -921,7 +922,7 @@ namespace Host
 
                     }
                     Server.SendData(clientID, ConvertStringToBytes("/7"));
-                   
+
                 }
 
                 string[] mazo = { "1", "1", "1", "1",
@@ -957,7 +958,7 @@ namespace Host
 
                     foreach (string clientID in Server.Users) //manda a cada usuario una carta random
                     {
-                        
+
                         GuardarClienteNum(clientID, int.Parse(mazo[j]), i.ToString(), lista);
                         if (clientID == "elYarol")
                         {
@@ -988,8 +989,12 @@ namespace Host
                     }
                 }
             }
+        }
+        void Server_DataReceived(string ID, byte[] Data)
+        {
+          string aux = ConvertBytesToString(Data);
 
-
+            repartir(ID, Data);
             if (aux[0].ToString() == "@")
             {
                 Server.Brodcast(ConvertStringToBytes("@"));

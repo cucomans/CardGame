@@ -19,7 +19,7 @@ namespace Host
     }
     public partial class MainDisplay : Form
     {
-        List<Persona> lista = new List<Persona>(); //crea la lista para la ronda 1 con la carta de cada usuario
+       List<Persona> lista = new List<Persona>(); //crea la lista para la ronda 1 con la carta de cada usuario
         public MainDisplay()
         {
             InitializeComponent();
@@ -30,7 +30,6 @@ namespace Host
         {
             Server = new NetComm.Host(2020); //Initialize the Server object, connection will use the 2020 port number
             Server.StartConnection(); //Starts listening for incoming clients
-
             //Adding event handling methods, to handle the server messages
             Server.onConnection += new NetComm.Host.onConnectionEventHandler(Server_onConnection);
             Server.lostConnection += new NetComm.Host.lostConnectionEventHandler(Server_lostConnection);
@@ -45,22 +44,7 @@ namespace Host
         {
             Log.AppendText("Bienvenido al Berenjena Online" + Environment.NewLine);
         }
-        static void RandomearMazo(ref string[] arr)
-        {
-            if (arr == null)
-            {
-                arr = new string[90];
-            }
-
-            var rand = new Random();
-            for (int i = arr.Length - 1; i > 0; i--)
-            {
-                int n = rand.Next(i + 1);
-                string temp = arr[i];
-                arr[i] = arr[n];
-                arr[n] = temp;               
-            }
-        }   
+   
         void Server_lostConnection(string id)
         {
             if (Log.IsDisposed) return; //Fixes the invoke error
@@ -78,22 +62,7 @@ namespace Host
         {
             return ASCIIEncoding.ASCII.GetBytes(str);
         }
-        void GuardarClienteNum(string ID, int random,string cartax,List<Persona> lista)
-        {
-            if (lista.Exists(x => x.nombre == ID && x.carta == cartax) == false)
-            {
-                lista.Add(new Persona
-                {
-                    nombre = ID,
-                    num = random,
-                    carta = cartax});
-
-            }
-            else
-            {
-                lista.Find(x => x.nombre == ID && x.carta == cartax).num = random;
-            }
-        }
+       
         void Mandarcartaronda1 (string clientID, int random,string pos)
         {
             switch (random)
@@ -614,6 +583,39 @@ namespace Host
                     break;
 
 
+            }
+        }
+        void GuardarClienteNum(string ID, int random, string cartax, List<Persona> lista)
+        {
+            if (lista.Exists(x => x.nombre == ID && x.carta == cartax) == false)
+            {
+                lista.Add(new Persona
+                {
+                    nombre = ID,
+                    num = random,
+                    carta = cartax
+                });
+
+            }
+            else
+            {
+                lista.Find(x => x.nombre == ID && x.carta == cartax).num = random;
+            }
+        }
+        static void RandomearMazo(ref string[] arr)
+        {
+            if (arr == null)
+            {
+                arr = new string[90];
+            }
+
+            var rand = new Random();
+            for (int i = arr.Length - 1; i > 0; i--)
+            {
+                int n = rand.Next(i + 1);
+                string temp = arr[i];
+                arr[i] = arr[n];
+                arr[n] = temp;
             }
         }
         void msgGanoPierdo(byte[] Data,string ID)
